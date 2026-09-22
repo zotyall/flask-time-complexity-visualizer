@@ -85,10 +85,18 @@ def _quick_sort(a):                # middle item is the pivot: smaller go left, 
             + _quick_sort([x for x in a if x > pivot]))
 
 
-def nested_loops(n):               # O(n^2)
+def nested_loops(n):
+    
+    unique_users =[]               # O(n^2)
     for i in range(n):
+        seen = False
         for j in range(n):
-            pass
+            if nested_loops[i]['id'] == unique_users[j]['id']:
+                seen = True
+                break
+        if not seen:
+            unique_users.append(nested_loops[i])
+            
 
 
 # name used in the URL -> function
@@ -102,3 +110,5 @@ ALGOS = {
     'quick_sort': quick_sort,
     'nested_loops': nested_loops,
 }
+
+
